@@ -16,11 +16,12 @@ class QuizQuestionsActivity : AppCompatActivity(), View.OnClickListener {
     private var mCurrentPosition:Int = 1
     private var mQuestionsList:ArrayList<Question>? = null
     private var mSelectedOptionPosition : Int = 0
-    val tv_option_one: TextView by lazy { findViewById<TextView>(R.id.tv_option_one) }
+    private var mCorrectAnswers: Int = 0
+    val tv_option_one: TextView by lazy {findViewById<TextView>(R.id.tv_option_one)}
     val tv_option_two: TextView by lazy { findViewById<TextView>(R.id.tv_option_two) }
     val tv_option_three: TextView by lazy { findViewById<TextView>(R.id.tv_option_three) }
     val tv_option_four: TextView by lazy { findViewById<TextView>(R.id.tv_option_four) }
-    val btn_sumbit: TextView by lazy { findViewById<Button>(R.id.btn_submit) }
+    val btn_sumbit: Button by lazy { findViewById<Button>(R.id.btn_submit) }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -120,7 +121,9 @@ class QuizQuestionsActivity : AppCompatActivity(), View.OnClickListener {
                 } else {
                     val question = mQuestionsList?.get(mCurrentPosition - 1)
                     if(question!!.correctAnswer != mSelectedOptionPosition){
-                        answerView(mCurrentPosition, R.drawable.wrong_option_border_bg)
+                        answerView(mSelectedOptionPosition, R.drawable.wrong_option_border_bg)
+                    }else{
+                        mCorrectAnswers++
                     }
                     answerView(question.correctAnswer, R.drawable.correct_option_border_bg)
                     if (mCurrentPosition == mQuestionsList!!.size){
