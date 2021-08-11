@@ -32,7 +32,7 @@ object Constants{
 
         val que5 = Question(1,"What is square root of -1",
             0, "Undefined", "Math ERROR",
-            "Syntx Error", "Value:I", 4
+            "Syntx Error", "i", 4
         )
         questionsList.add(que5)
 
@@ -46,19 +46,19 @@ object Constants{
             "Japan", "China", 4
         )
         questionsList.add(que7)
-        val que8 = Question(1,"when was trump elected?",
-            R.drawable.trump, "2017", "2018",
-            "2016", "2015", 3
+        val que8 = Question(1,"Whats pure water's ph level",
+            0, "7", "10",
+            "6", "5", 1
         )
         questionsList.add(que8)
-        val que9 = Question(1,"when was trump elected?",
-            R.drawable.trump, "2017", "2018",
-            "2016", "2015", 3
+        val que9 = Question(1,"What is the hardest rock?",
+            0, "Sapphire", "Diamond",
+            "Emerald", "Painite", 2
         )
         questionsList.add(que9)
-        val que10 = Question(1,"when was trump elected?",
-            R.drawable.trump, "2017", "2018",
-            "2016", "2015", 3
+        val que10 = Question(1,"How many bones do sharks have?",
+            0, "0", "1421",
+            "208", "481", 1
         )
         questionsList.add(que10)
         return questionsList

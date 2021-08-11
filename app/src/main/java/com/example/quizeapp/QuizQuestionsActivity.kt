@@ -40,11 +40,10 @@ class QuizQuestionsActivity : AppCompatActivity(), View.OnClickListener {
         mQuestionsList = Constants.getQuestions()
 
         setQuestion()
-
-            tv_option_one.setOnClickListener(this)
-            tv_option_two.setOnClickListener(this)
-            tv_option_three.setOnClickListener(this)
-            tv_option_four.setOnClickListener(this)
+                tv_option_one.setOnClickListener(this)
+                tv_option_two.setOnClickListener(this)
+                tv_option_three.setOnClickListener(this)
+                tv_option_four.setOnClickListener(this)
             btn_sumbit.setOnClickListener(this)
     }
 
@@ -56,13 +55,6 @@ class QuizQuestionsActivity : AppCompatActivity(), View.OnClickListener {
 
         defaultOptionsView()
 
-        if (mCurrentPosition == mQuestionsList!!.size) {
-            btn_sumbit.text = "Finish"
-
-        } else {
-            btn_sumbit.text = "Submit"
-
-        }
         mProgress.progress = mCurrentPosition
         val Tv_Progress = findViewById<TextView>(R.id.tv_progress)
         Tv_Progress.text = "$mCurrentPosition" + "/" + mProgress.max
@@ -194,5 +186,7 @@ class QuizQuestionsActivity : AppCompatActivity(), View.OnClickListener {
         )
 
     }
+
+
 }
 
