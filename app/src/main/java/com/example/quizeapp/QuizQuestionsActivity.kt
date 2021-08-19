@@ -70,7 +70,7 @@ class QuizQuestionsActivity : AppCompatActivity(), View.OnClickListener {
     }
 
     private fun defaultOptionsView() {
-        var options = ArrayList<TextView>()
+        val options = ArrayList<TextView>()
         options.add(0, tv_option_one)
         options.add(1, tv_option_two)
         options.add(2, tv_option_three)
