@@ -14,8 +14,7 @@ import androidx.core.content.ContextCompat
 import org.w3c.dom.Text
 import java.util.jar.Attributes
 import android.R.attr.button
-
-
+import kotlin.random.Random
 
 
 class QuizQuestionsActivity : AppCompatActivity(), View.OnClickListener {
@@ -38,13 +37,14 @@ class QuizQuestionsActivity : AppCompatActivity(), View.OnClickListener {
         mUserName = intent.getStringExtra(Constants.USER_NAME)
 
         mQuestionsList = Constants.getQuestions()
+        mQuestionsList!!.shuffle()
 
-        setQuestion()
+                setQuestion()
                 tv_option_one.setOnClickListener(this)
                 tv_option_two.setOnClickListener(this)
                 tv_option_three.setOnClickListener(this)
                 tv_option_four.setOnClickListener(this)
-            btn_sumbit.setOnClickListener(this)
+                btn_sumbit.setOnClickListener(this)
     }
 
     private fun setQuestion() {
@@ -52,7 +52,6 @@ class QuizQuestionsActivity : AppCompatActivity(), View.OnClickListener {
 
         val question = mQuestionsList!![mCurrentPosition - 1]
         val mProgress = findViewById<ProgressBar>(R.id.progressBar)
-
         defaultOptionsView()
 
         mProgress.progress = mCurrentPosition
@@ -71,12 +70,11 @@ class QuizQuestionsActivity : AppCompatActivity(), View.OnClickListener {
     }
 
     private fun defaultOptionsView() {
-        val options = ArrayList<TextView>()
+        var options = ArrayList<TextView>()
         options.add(0, tv_option_one)
         options.add(1, tv_option_two)
         options.add(2, tv_option_three)
         options.add(3, tv_option_four)
-
         for (option in options) {
             option.setTextColor(Color.parseColor("#7A8089"))
             option.typeface = Typeface.DEFAULT
