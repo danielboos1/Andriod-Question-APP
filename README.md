@@ -8,3 +8,4 @@ Note: The on click button logic is so horrible
  - Cool design
  - 10 questions
  - Result page
+ - Questions are randomised
